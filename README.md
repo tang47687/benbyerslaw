@@ -20,3 +20,47 @@ A lightweight web scraper built in Go that extracts the latest legal articles an
    ```bash
    git clone https://github.com/YOUR_USERNAME/ben-byers-law-scraper.git
    cd ben-byers-law-scraper
+   ```
+
+2. **Initialize the Go module:**
+   ```bash
+   go mod init ben-byers-law-scraper
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   go get github.com/gocolly/colly/v2
+   ```
+
+## Usage
+
+Run the script directly using the Go command:
+
+```bash
+go run main.go
+```
+
+The script will visit the site and print a list of found articles in the following format:
+```text
+Found 10 articles:
+----------------------------------------
+[1] When Can Standing Be Raised In Florida Lawsuit?
+    URL: https://benbyerslaw.com/when-can-standing-be-raised-in-florida-lawsuit/
+...
+```
+
+## How It Works
+
+The script utilizes the `colly` library to:
+1. Connect to `https://benbyerslaw.com/`.
+2. Parse the HTML to find `<h2>` or `.entry-title` links which contain the article metadata.
+3. Store and display the results in an easy-to-read list.
+
+## Disclaimer
+
+This project is for educational purposes only. Please ensure you comply with the website's `robots.txt` policy and Terms of Service when scraping data.
+
+## License
+
+[MIT](LICENSE)
+```
